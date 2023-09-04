@@ -1,0 +1,11 @@
+using Kultie.StateMachine.Behavior;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace [NameSpace]{
+    [RequireComponent(typeof([ContextName]))]
+    public class [Prefix]StateMachine: StateMachineComponent<[ContextName]>{
+        
+    }
+}

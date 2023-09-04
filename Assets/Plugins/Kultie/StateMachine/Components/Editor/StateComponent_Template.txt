@@ -1,0 +1,27 @@
+using Kultie.StateMachine.Behavior;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace [NameSpace]{
+    public class [StateName]State: StateComponent<[ContextName]>{
+        //To Access StateMachine control this state use this.StateMachine
+        //For example to change state use: this.StateMachine.ChangeState([other state id]);
+        public override string ID => [Prefix]StateMachineKeys.[StateNameKey];
+
+        public override void OnUpdate(float dt)
+        {
+
+        }
+
+        public override void OnEnter()
+        {
+            Debug.Log("Welcome to [StateName]");
+        }
+
+        public override void OnExit()
+        {
+
+        }
+    }
+}
