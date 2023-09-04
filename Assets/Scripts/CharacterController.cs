@@ -10,36 +10,36 @@ namespace Kultie.GameMechanics.Test
 {
     public class CharacterController : TimedEntity
     {
-        private IAnimator _animator;
+        public IAnimator Animator { private set; get; }
         private float _hitStopTime = 1;
         public override float TimeScale => base.TimeScale * _hitStopTime;
 
         private void Awake()
         {
-            _animator = GetComponentInChildren<IAnimator>();
+            Animator = GetComponentInChildren<IAnimator>();
         }
 
         [Button]
         void Attack1()
         {
-            _animator.PlayAnimation("Attack1", ReturnToIdle);
+            Animator.PlayAnimation("Attack1", ReturnToIdle);
         }
 
         [Button]
         void Attack2()
         {
-            _animator.PlayAnimation("Attack2", ReturnToIdle);
+            Animator.PlayAnimation("Attack2", ReturnToIdle);
         }
 
         [Button]
         void Attack3()
         {
-            _animator.PlayAnimation("Attack3", ReturnToIdle);
+            Animator.PlayAnimation("Attack3", ReturnToIdle);
         }
 
         void ReturnToIdle()
         {
-            _animator.PlayLoopAnimation("Idle");
+            Animator.PlayLoopAnimation("Idle");
         }
 
        public void SetHitStop(float value)

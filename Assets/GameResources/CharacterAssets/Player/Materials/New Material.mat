@@ -201,7 +201,7 @@ Material:
     - _ShadowX: 0.1
     - _ShadowY: -0.05
     - _ShakeUvSpeed: 20
-    - _ShakeUvX: 0.5
+    - _ShakeUvX: 1.5
     - _ShakeUvY: 0
     - _ShineGlow: 1
     - _ShineLocation: 0.5

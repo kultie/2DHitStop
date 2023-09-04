@@ -253,7 +253,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 0
   checkInterval: 0.05
-  hitStopFrame: 30
+  hitStopFrame: 45
 --- !u!1 &171634478
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 0
   checkInterval: 0.05
-  hitStopFrame: 30
+  hitStopFrame: 45
 --- !u!1 &439273646
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 0
   checkInterval: 0.05
-  hitStopFrame: 30
+  hitStopFrame: 45
 --- !u!1 &671134119
 GameObject:
   m_ObjectHideFlags: 0

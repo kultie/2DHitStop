@@ -9,13 +9,13 @@ namespace Kultie.GameMechanics.Test
     {
         private CharacterController _attacker;
         private CharacterController _victim;
-        private int _hitStopFrame;
+        public int hitStopFrame;
 
         public TestCollisionContext(CharacterController attacker, CharacterController victim, int hitStopFrame)
         {
             _attacker = attacker;
             _victim = victim;
-            _hitStopFrame = hitStopFrame;
+            this.hitStopFrame = hitStopFrame;
         }
 
         public bool IsValid()
@@ -30,7 +30,7 @@ namespace Kultie.GameMechanics.Test
 
         IEnumerator HitStopSequence()
         {
-            var frameCount = _hitStopFrame;
+            var frameCount = hitStopFrame;
             _attacker.SetHitStop(0);
             _victim.SetHitStop(0);
             while (frameCount > 0)
