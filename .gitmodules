@@ -1,0 +1,3 @@
+[submodule "Assets/Kultie"]
+	path = Assets/Kultie
+	url = https://github.com/kultie/CoreLibrary.git
