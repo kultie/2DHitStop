@@ -19,6 +19,22 @@ namespace Kultie.GameMechanics.Test
             Animator = GetComponentInChildren<IAnimator>();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Attack1();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Attack2();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                Attack3();
+            }
+        }
+
         [Button]
         void Attack1()
         {
