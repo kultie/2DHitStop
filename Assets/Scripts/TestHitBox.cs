@@ -2,15 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Kultie.GameMechanics.CollisionSystem;
+using Kultie.GameMechanics.HitStopSystem;
 using Kultie.GameMechanics.TimeSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Kultie.GameMechanics.Test
 {
     public class TestHitBox : HitBox<TestCollisionContext, TestHurtBox>
     {
         private CharacterController _characterController;
-
+        
         public CharacterController Owner
         {
             get
@@ -24,7 +26,7 @@ namespace Kultie.GameMechanics.Test
             }
         }
 
-        [SerializeField] private int hitStopFrame = 5;
+        [FormerlySerializedAs("hitStopFrame")] [SerializeField] private HitStopData hitStopData;
 
         protected override WaitInstruction IntervalWait(float time)
         {
@@ -38,7 +40,7 @@ namespace Kultie.GameMechanics.Test
 
         protected override TestCollisionContext GetCollisionContext(TestHurtBox hitSubject)
         {
-            return new TestCollisionContext(Owner, hitSubject.Owner, hitStopFrame);
+            return new TestCollisionContext(Owner, hitSubject.Owner, hitStopData);
         }
     }
 }

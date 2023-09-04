@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Kultie.GameMechanics.CollisionSystem;
+using Kultie.GameMechanics.HitStopSystem;
 using UnityEngine;
 
 namespace Kultie.GameMechanics.Test
@@ -9,13 +10,13 @@ namespace Kultie.GameMechanics.Test
     {
         private CharacterController _attacker;
         private CharacterController _victim;
-        public int hitStopFrame;
+        public HitStopData HitStopData;
 
-        public TestCollisionContext(CharacterController attacker, CharacterController victim, int hitStopFrame)
+        public TestCollisionContext(CharacterController attacker, CharacterController victim, HitStopData hitStopData)
         {
             _attacker = attacker;
             _victim = victim;
-            this.hitStopFrame = hitStopFrame;
+            HitStopData = hitStopData;
         }
 
         public bool IsValid()
@@ -25,22 +26,7 @@ namespace Kultie.GameMechanics.Test
 
         public void OnCollide()
         {
-            CoroutineProxy.Schedule(HitStopSequence());
-        }
-
-        IEnumerator HitStopSequence()
-        {
-            var frameCount = hitStopFrame;
-            _attacker.SetHitStop(0);
-            _victim.SetHitStop(0);
-            while (frameCount > 0)
-            {
-                frameCount--;
-                yield return null;
-            }
-
-            _attacker.SetHitStop(1);
-            _victim.SetHitStop(1);
+            HitStopData.Trigger(_attacker, _victim);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Kultie.GameMechanics.Test
     {
         [SerializeField] private SpriteRenderer renderer;
         private CharacterController _characterController;
+        private IEnumerator seq;
 
         public CharacterController Owner
         {
@@ -28,19 +29,25 @@ namespace Kultie.GameMechanics.Test
 
         protected override void OnHitBy(TestCollisionContext context)
         {
-            StartCoroutine(HitSequence(context));
+            if (seq != null)
+            {
+                StopCoroutine(seq);
+            }
+
+            seq = HitSequence(context);
+            StartCoroutine(seq);
         }
 
         IEnumerator HitSequence(TestCollisionContext context)
         {
-            int frame = context.hitStopFrame;
+            int frame = context.HitStopData.HitStun;
             Owner.Animator.PlayAnimation($"Hurt{Random.Range(1, 3)}");
             renderer.material.EnableKeyword("HITEFFECT_ON");
             renderer.material.EnableKeyword("SHAKEUV_ON");
             while (frame > 0)
             {
                 frame--;
-                yield return null;
+                yield return TimeKeeper.Global.Wait(Time.deltaTime);
             }
 
             renderer.material.DisableKeyword("HITEFFECT_ON");

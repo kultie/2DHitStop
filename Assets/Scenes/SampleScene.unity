@@ -253,7 +253,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 0
   checkInterval: 0.05
-  hitStopFrame: 15
+  hitStopData: {fileID: 11400000, guid: ee987041c6915374fbec7343181497d5, type: 2}
 --- !u!1 &171634478
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 0
   checkInterval: 0.05
-  hitStopFrame: 15
+  hitStopData: {fileID: 11400000, guid: 5935ef1c747293849857afd0bfb59195, type: 2}
 --- !u!1 &439273646
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 1
   checkInterval: 0.05
-  hitStopFrame: 5
+  hitStopData: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +681,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 1
   checkInterval: 0.05
-  hitStopFrame: 5
+  hitStopData: {fileID: 0}
 --- !u!1 &612506208
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 0
   checkInterval: 0.05
-  hitStopFrame: 15
+  hitStopData: {fileID: 11400000, guid: 6cafb7f2220a7b14280de4510c8539bd, type: 2}
 --- !u!1 &671134119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
     m_Bits: 64
   multipleHit: 1
   checkInterval: 0.05
-  hitStopFrame: 5
+  hitStopData: {fileID: 0}
 --- !u!1 &685849611
 GameObject:
   m_ObjectHideFlags: 0
