@@ -28,6 +28,11 @@ namespace Kultie.GameMechanics.Test
 
         [FormerlySerializedAs("hitStopFrame")] [SerializeField] private HitStopData hitStopData;
 
+        protected override void OnActive()
+        {
+            
+        }
+
         protected override WaitInstruction IntervalWait(float time)
         {
             return Owner.Wait(time);
