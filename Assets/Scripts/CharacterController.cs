@@ -11,6 +11,8 @@ namespace Kultie.GameMechanics.Test
 {
     public class CharacterController : TimedEntity, IHitStopSubject
     {
+        [SerializeField]
+        [Range(0, 5)] private float attackSpeed = 1;
         public IAnimator Animator { private set; get; }
         private float _hitStopTime = 1;
         public override float TimeScale => base.TimeScale * _hitStopTime;
@@ -41,19 +43,22 @@ namespace Kultie.GameMechanics.Test
         [Button]
         void Attack1()
         {
-            Animator.PlayAnimation("Attack1", ReturnToIdle);
+            StopHitStop();
+            Animator.PlayAnimation("Attack1", ReturnToIdle, attackSpeed);
         }
 
         [Button]
         void Attack2()
         {
-            Animator.PlayAnimation("Attack2", ReturnToIdle);
+            StopHitStop();
+            Animator.PlayAnimation("Attack2", ReturnToIdle, attackSpeed);
         }
 
         [Button]
         void Attack3()
         {
-            Animator.PlayAnimation("Attack3", ReturnToIdle);
+            StopHitStop();
+            Animator.PlayAnimation("Attack3", ReturnToIdle, attackSpeed);
         }
 
         void ReturnToIdle()
@@ -89,6 +94,16 @@ namespace Kultie.GameMechanics.Test
                 //Wait for 1 frame of update
                 yield return TimeKeeper.Global.Wait(Time.deltaTime);
                 _frame--;
+            }
+
+            SetHitStop(1);
+        }
+
+        void StopHitStop()
+        {
+            if (hitStopSeq != null)
+            {
+                StopCoroutine(hitStopSeq);
             }
 
             SetHitStop(1);
